@@ -100,7 +100,11 @@ const Hero = () => {
           <div className="relative w-80 h-80">
             <div className="absolute inset-0 bg-emerald-600/20 dark:bg-emerald-500/10 rounded-full blur-3xl"></div>
             <div className="relative bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl w-full h-full flex items-center justify-center">
-              <span className="text-6xl font-bold text-emerald-600 dark:text-emerald-500">KR</span>
+              <img 
+                src="/new.jpg" 
+                alt="Your Image"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
           </div>
         </motion.div>
