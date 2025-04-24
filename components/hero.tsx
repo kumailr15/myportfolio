@@ -21,13 +21,13 @@ const Hero = () => {
   }, [typedText])
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col space-y-6"
+          className="flex flex-col space-y-6 order-2 md:order-1"
         >
           <div>
             <h2 className="text-lg md:text-xl font-medium text-emerald-600 dark:text-emerald-500">Hello, I'm</h2>
@@ -95,9 +95,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="hidden md:flex justify-center"
+          className="flex justify-center order-1 md:order-2"
         >
-          <div className="relative w-80 h-80">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
             <div className="absolute inset-0 bg-emerald-600/20 dark:bg-emerald-500/10 rounded-full blur-3xl"></div>
             <div className="relative bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl w-full h-full flex items-center justify-center">
               <img 

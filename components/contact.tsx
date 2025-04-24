@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
@@ -10,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Phone, Mail, Send } from "lucide-react"
+import emailjs from "emailjs-com"
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -36,30 +36,34 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitSuccess(true)
-      setFormData({ name: "", email: "", subject: "", message: "" })
+    // Send email using emailjs
+    emailjs
+      .send(
+        "service_a7c8zd1", // Replace with your Service ID
+        "template_jnblks2", // Replace with your Template ID
+        formData,           // Pass the form data as a variable
+        "4UOONPFnUmp3zxer9"   // Replace with your Public Key
+      )
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text)
+          setIsSubmitting(false)
+          setSubmitSuccess(true)
+          setFormData({ name: "", email: "", subject: "", message: "" })
+        },
+        (err) => {
+          console.log('FAILED...', err)
+          setIsSubmitting(false)
+        }
+      )
 
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false)
-      }, 3000)
-    }, 1500)
+    // Reset success message after 3 seconds
+    setTimeout(() => {
+      setSubmitSuccess(false)
+    }, 3000)
   }
 
   const contactInfo = [
-    {
-      icon: <MapPin className="h-6 w-6 text-emerald-600 dark:text-emerald-500" />,
-      title: "Location",
-      details: "Meerut, Uttar Pradesh, India",
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-emerald-600 dark:text-emerald-500" />,
-      title: "Phone",
-      details: "+91 9219751786",
-    },
     {
       icon: <Mail className="h-6 w-6 text-emerald-600 dark:text-emerald-500" />,
       title: "Email",
@@ -114,7 +118,7 @@ const Contact = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="kumail raza"
+                        placeholder="Your Name"
                         required
                         className="border-gray-300 dark:border-gray-700 focus:border-emerald-500 focus:ring-emerald-500"
                       />

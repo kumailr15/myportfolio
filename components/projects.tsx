@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
+import { Github, ExternalLink } from "lucide-react"
 
 const Projects = () => {
   const [ref, inView] = useInView({
@@ -24,7 +24,7 @@ const Projects = () => {
       ],
       github: "https://github.com/kumailr15/student-record-ms",
       period: "Sept 2024 - Oct 2024",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/student.png",
     },
     {
       title: "Operating System Scheduler",
@@ -36,8 +36,9 @@ const Projects = () => {
         "Optimized JavaScript performance to handle real-time scheduling simulations, achieving a 30% reduction in processing time for large datasets, allowing the tool to simulate up to 100 processes without lag.",
       ],
       github: "https://github.com/kumailr15/Scheduling_algo_simulator",
+      live: "https://algorithm-simulation.vercel.app/", 
       period: "June 2024 - July 2024",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/os.png",
     },
   ]
 
@@ -99,7 +100,19 @@ const Projects = () => {
                   </ul>
                 </CardContent>
                 <CardFooter className="pt-0">
-                  <div className="flex space-x-2">
+                  <div className="flex flex-wrap gap-2">
+                    {project.live && (
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-emerald-600 hover:bg-emerald-700 text-white dark:bg-emerald-500 dark:hover:bg-emerald-600"
+                      >
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                     <Button
                       asChild
                       variant="outline"
