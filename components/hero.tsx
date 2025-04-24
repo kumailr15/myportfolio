@@ -49,14 +49,14 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-4">
             <Button asChild className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              <a href="#contact">Get In Touch</a>
+              <a href="">My Story</a>
             </Button>
             <Button
               asChild
               variant="outline"
               className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:border-emerald-500 dark:text-emerald-500 dark:hover:bg-gray-800"
             >
-              <a href="/resume.pdf" download>
+              <a href="/Kumail_cv.pdf" download>
                 <Download className="mr-2 h-4 w-4" /> Resume
               </a>
             </Button>
@@ -73,7 +73,7 @@ const Hero = () => {
               <span className="sr-only">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/kumailraza28"
+              href="https://www.linkedin.com/in/kumailraza28/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
