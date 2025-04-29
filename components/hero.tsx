@@ -103,7 +103,7 @@ const Hero = () => {
               <img 
                 src="/pic.jpg" 
                 alt="Your Image"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-contain object-center rounded-full"
               />
             </div>
           </div>
