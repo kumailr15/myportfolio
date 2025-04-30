@@ -15,7 +15,7 @@ const Education = () => {
       institution: "Lovely Professional University",
       degree: "Computer Science and Engineering",
       period: "2023 - 2026",
-      location: "Jalandhar, Punjab",
+      location: "Phagwara, Punjab",
       grade: "CGPA: 7.2",
       icon: <GraduationCap className="h-6 w-6 text-emerald-600 dark:text-emerald-500" />,
     },
