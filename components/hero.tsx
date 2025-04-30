@@ -101,9 +101,10 @@ const Hero = () => {
             <div className="absolute inset-0 bg-emerald-600/20 dark:bg-emerald-500/10 rounded-full blur-3xl"></div>
             <div className="relative bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl w-full h-full flex items-center justify-center">
               <img 
-                src="/pic.jpg" 
+                src="/kr.jpg" 
                 alt="Your Image"
-                className="w-full h-full object-contain object-center rounded-full"
+                className="w-full h-full object-cover object-center rounded-full"
+
               />
             </div>
           </div>
