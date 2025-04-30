@@ -24,7 +24,7 @@ const Projects = () => {
       ],
       github: "https://github.com/kumailr15/student-record-ms",
       period: "Sept 2024 - Oct 2024",
-      image: "/student.png",
+      image: "/srms.jpg",
     },
     {
       title: "Operating System Scheduler",
@@ -38,7 +38,7 @@ const Projects = () => {
       github: "https://github.com/kumailr15/Scheduling_algo_simulator",
       live: "https://algorithm-simulation.vercel.app/", 
       period: "June 2024 - July 2024",
-      image: "/os.png",
+      image: "/algo.jpg",
     },
   ]
 
@@ -65,12 +65,14 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-gray-700">
-                <div className="relative h-48 overflow-hidden">
+             
+
+                 <div className="relative aspect-[16/9] overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
+                  /> 
                   <div className="absolute top-0 right-0 bg-emerald-600 text-white text-xs px-2 py-1 m-2 rounded">
                     {project.period}
                   </div>
